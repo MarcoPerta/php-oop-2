@@ -14,8 +14,8 @@ class Prodotto{
         Float $prezzo,
         Category $Category
     ){
-        $this->nome = $nome;
         $this->immagine = $immagine;
+        $this->nome = $nome;
         $this->prezzo = $prezzo;
         $this->Category = $Category;
     }

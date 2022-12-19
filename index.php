@@ -9,13 +9,12 @@ $categoria = [
     'gatto' => new Category ('gatto', 'icon-font-awesome-gatto'),
     'uccello' => new Category ('uccello', 'icon-font-awesome-uccello')
   ];
-var_dump( $categoria );
 
 $prodotti = [
-     new Cibo ('https://picsum.photos/id/237/200/300', 'Royal Canin', $categoria['cane'], '43,99', '545', 'prosciutto, riso' ),
-     new Cibo ('https://picsum.photos/id/237/200/300', 'Almo Nature', $categoria['cane'], '44,99', '600', 'manzo, cereali' ),
-     new Accessori ('https://picsum.photos/id/237/200/300', 'Voliera Ferplsat Bella Casa', $categoria['uccello'], '184,99', 'Legno', 'M: L83 x P 67 x h 153 cm' ),
-     new Accessori ('https://picsum.photos/id/237/200/300', 'Topini di Peluche', $categoria['gatto'], '4,99', 'orbido con codina in corda', '8,5 cm x 10 cm' )
+     new Cibo ('https://picsum.photos/id/237/200/300', 'Royal Canin', 43.99, $categoria['cane'], 545, 'prosciutto, riso' ),
+     new Cibo ('https://picsum.photos/id/237/200/300', 'Almo Nature', 44.99, $categoria['cane'],  600, 'manzo, cereali' ),
+     new Accessori ('https://picsum.photos/id/237/200/300', 'Voliera Ferplsat Bella Casa', $categoria['uccello'], 184.99, 'Legno', 'M: L83 x P 67 x h 153 cm' ),
+     new Accessori ('https://picsum.photos/id/237/200/300', 'Topini di Peluche', $categoria['gatto'], 4.99, 'morbido con codina in corda', '8,5 cm x 10 cm' )
 ];
 var_dump( $prodotti );
 
