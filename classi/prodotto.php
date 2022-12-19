@@ -9,18 +9,17 @@ class Prodotto{
     public $Category;
 
     public function __construct(
-        String $nome,
         String $immagine,
+        String $nome,
         Float $prezzo,
-        Generi $Category
+        Category $Category
     ){
         $this->nome = $nome;
         $this->immagine = $immagine;
         $this->prezzo = $prezzo;
-        $this->category = $Category;
+        $this->Category = $Category;
     }
 
 }
-
 
 ?>
