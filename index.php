@@ -5,9 +5,9 @@ include_once __DIR__ . '/classi/cibo.php';
 include_once __DIR__ . '/classi/accessori.php';
 
 $categoria = [
-    'cane' => new Category ('cane', 'icon-font-awesome-cane'),
-    'gatto' => new Category ('gatto', 'icon-font-awesome-gatto'),
-    'uccello' => new Category ('uccello', 'icon-font-awesome-uccello')
+    'cane' => new Category ('cane', '<i class="fa-solid fa-dog"></i>'),
+    'gatto' => new Category ('gatto', '<i class="fa-solid fa-cat"></i>'),
+    'uccello' => new Category ('uccello', '<i class="fa-solid fa-dove"></i>')
   ];
 
 $prodotti = [
@@ -27,7 +27,7 @@ var_dump( $prodotti );
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Spotify con Php e vue</title>
+    <title></title>
     <!-- FontAwesome 6.2 -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
         integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
@@ -42,6 +42,36 @@ var_dump( $prodotti );
     <div id='app'>
         <h2>Boolshop</h2>
         <h5>I nostri prodotti</h5>
+        <div class="container">
+            <div class="row">
+             <?php foreach ($prodotti as $elem){ ?>
+                 <div class="col-4 g-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?php echo $elem -> immagine; ?>" class="card-img-top" :alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                            <?php echo $elem -> nome; ?>
+                            </h5>
+                            <p class="card-text">
+                            <?php echo $elem -> Category -> nomeCategory; ?>
+                            </p>
+                            <p class="card-text">
+                            <?php echo $elem -> prezzo; ?>
+                            </p>
+
+                            <?php if(get_class($elem) == 'Cibo'){ ?>
+                                <p>Peso netto: <?php echo $elem -> pesoNetto ?></p>
+                            <?php } else if( get_class($elem) == 'Accessori' ) {?>
+                            <p>Caratteristiche : <?php echo $elem ->  dimensioni ?></p> 
+                            <p>Materiale : <?php echo $elem ->  materiale ?></p>    
+                            <?php }?>
+                        </div> 
+                    </div> 
+                </div>
+            <?php }?>
+            </div>
+        </div>
+
 
     </div>
 
